@@ -57,7 +57,8 @@ class Unzipper {
         $GLOBALS['status'] = array('info' => '.zip or .gz or .rar files found, ready for extraction');
       }
       else {
-        $GLOBALS['status'] = array('info' => 'No .zip or .gz or rar files found. So only zipping functionality available.');
+        $GLOBALS['status'] = array('info' => 'No .zip or .gz or rar files found. So only zipping 
+        functionality available.');
       }
     }
   }
@@ -200,7 +201,9 @@ class Unzipper {
   public static function extractRarArchive($archive, $destination) {
     // Check if webserver supports unzipping.
     if (!class_exists('RarArchive')) {
-      $GLOBALS['status'] = array('error' => 'Error: Your PHP version does not support .rar archive functionality. <a class="info" href="http://php.net/manual/en/rar.installation.php" target="_blank">How to install RarArchive</a>');
+      $GLOBALS['status'] = array('error' => 'Error: Your PHP version does not support .rar archive 
+      functionality. <a class="info" href="http://php.net/manual/en/rar.installation.php" target="_blank">
+      How to install RarArchive</a>');
       return;
     }
     // Check if archive is readable.
@@ -405,7 +408,8 @@ class Zipper {
     </select>
     <label for="extpath">Extraction path (optional):</label>
     <input type="text" name="extpath" class="form-field" />
-    <p class="info">Enter extraction path without leading or trailing slashes (e.g. "mypath"). If left empty current directory will be used.</p>
+    <p class="info">Enter extraction path without leading or trailing slashes (e.g. "mypath"). 
+    If left empty current directory will be used.</p>
     <input type="submit" name="dounzip" class="submit" value="Unzip Archive"/>
   </fieldset>
 
@@ -413,7 +417,8 @@ class Zipper {
     <h1>Archive Zipper</h1>
     <label for="zippath">Path that should be zipped (optional):</label>
     <input type="text" name="zippath" class="form-field" />
-    <p class="info">Enter path to be zipped without leading or trailing slashes (e.g. "zippath"). If left empty current directory will be used.</p>
+    <p class="info">Enter path to be zipped without leading or trailing slashes (e.g. "zippath"). 
+    If left empty current directory will be used.</p>
     <input type="submit" name="dozip" class="submit" value="Zip Archive"/>
   </fieldset>
 </form>
