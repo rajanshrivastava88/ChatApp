@@ -22,6 +22,7 @@ if (!isset($_SESSION['unique_id'])) {
           header("location: users.php");
         }
         ?>
+
         <a href="users.php" class="back-icon"><i class="fas fa-arrow-left"></i></a>
         <img src="php/images/<?php echo $row['img']; ?>" alt="">
         <div class="details">
@@ -30,13 +31,14 @@ if (!isset($_SESSION['unique_id'])) {
         </div>
       </header>
       <div class="chat-box">
-
       </div>
+
       <form action="#" class="typing-area">
         <input type="text" class="incoming_id" name="incoming_id" value="<?php echo $user_id; ?>" hidden>
         <input type="text" name="message" class="input-field" placeholder="Type a message here..." autocomplete="off">
         <button><i class="fab fa-telegram-plane"></i></button>
       </form>
+      
     </section>
   </div>
 
