@@ -11,12 +11,15 @@
  * @package attec.toolbox
  * @version 0.1.1
  */
+
+
 define('VERSION', '0.1.1');
 
 $timestart = microtime(TRUE);
 $GLOBALS['status'] = array();
 
 $unzipper = new Unzipper;
+
 if (isset($_POST['dounzip'])) {
   // Check if an archive was selected for unzipping.
   $archive = isset($_POST['zipfile']) ? strip_tags($_POST['zipfile']) : '';
