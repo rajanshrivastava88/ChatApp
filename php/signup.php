@@ -33,8 +33,10 @@ if (!empty($fname) && !empty($lname) && !empty($email) && !empty($password)) {
                             $ran_id = rand(time(), 100000000);
                             $status = "Active now";
                             $encrypt_pass = md5($password);
+
                             $insert_query = mysqli_query($conn, "INSERT INTO users (unique_id, fname, lname, email, password, img, status)
                                 VALUES ({$ran_id}, '{$fname}','{$lname}', '{$email}', '{$encrypt_pass}', '{$new_img_name}', '{$status}')");
+                                
                             if ($insert_query) {
                                 $select_sql2 = mysqli_query($conn, "SELECT * FROM users WHERE email = '{$email}'");
                                 if (mysqli_num_rows($select_sql2) > 0) {
