@@ -1,4 +1,5 @@
 <?php
+
 session_start();
 include_once "config.php";
 
@@ -25,6 +26,7 @@ if (!empty($fname) && !empty($lname) && !empty($email) && !empty($password)) {
 
                 if (in_array($img_ext, $extensions) === true) {
                     $types = ["image/jpeg", "image/jpg", "image/png"];
+                    
                     if (in_array($img_type, $types) === true) {
                         $time = time();
                         $new_img_name = $time . $img_name;
@@ -36,7 +38,7 @@ if (!empty($fname) && !empty($lname) && !empty($email) && !empty($password)) {
 
                             $insert_query = mysqli_query($conn, "INSERT INTO users (unique_id, fname, lname, email, password, img, status)
                                 VALUES ({$ran_id}, '{$fname}','{$lname}', '{$email}', '{$encrypt_pass}', '{$new_img_name}', '{$status}')");
-                                
+
                             if ($insert_query) {
                                 $select_sql2 = mysqli_query($conn, "SELECT * FROM users WHERE email = '{$email}'");
                                 if (mysqli_num_rows($select_sql2) > 0) {
