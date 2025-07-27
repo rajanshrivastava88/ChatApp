@@ -12,6 +12,7 @@ if (!isset($_SESSION['unique_id'])) {
     <section class="users">
       <header>
         <div class="content">
+          
           <?php
           $sql = mysqli_query($conn, "SELECT * FROM users 
             WHERE unique_id = {$_SESSION['unique_id']}");
@@ -20,7 +21,7 @@ if (!isset($_SESSION['unique_id'])) {
             $row = mysqli_fetch_assoc($sql);
           }
           ?>
-          
+
           <img src="php/images/<?php echo $row['img']; ?>" alt="">
           <div class="details">
             <span><?php echo $row['fname'] . " " . $row['lname'] ?></span>
